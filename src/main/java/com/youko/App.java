@@ -26,6 +26,7 @@ public class App {
     private static final String[] LEVELS = { "DEBUG", "INFO", "WARN", "ERROR" };
 
     public static void main(String[] args) throws InterruptedException {
+        logger.info("Check if logback&logstash store logs:This is the first log.");
         while (true) {
             generateRandomLog();
             Thread.sleep(1000); // Wait 1 second between logs
@@ -35,7 +36,6 @@ public class App {
     private static void generateRandomLog() {
         String level = LEVELS[random.nextInt(LEVELS.length)];
         String message = MESSAGES[random.nextInt(MESSAGES.length)];
-
         switch (level) {
             case "DEBUG":
                 logger.debug(message);
