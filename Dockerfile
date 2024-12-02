@@ -1,5 +1,5 @@
 # First stage: Build the application
-FROM maven:3.8.8-openjdk-17-slim AS build
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -18,7 +18,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/kmp-demo-1.0-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/elk-demo-jar-with-dependencies.jar app.jar
 
 # Expose the application port
 EXPOSE 8080
