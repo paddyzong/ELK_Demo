@@ -48,7 +48,6 @@ services:
     container_name: kibana
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-      - xpack.encryptedSavedObjects.encryptionKey=a_secure_random_string_of_at_least_32_characters
     ports:
       - "5601:5601"
     networks:
